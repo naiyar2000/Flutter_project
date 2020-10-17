@@ -19,7 +19,8 @@ exports.adminOrderTrigger = functions.firestore.document('confirmedOrders/{id}')
         notification: {
             title: 'New Order',
             body: 'New order has been placed', 
-            clickAction: 'FLUTTER_NOTIFICATION_CLICK'
+            clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+            sound: 'default'
         } 
     })
 });
@@ -35,7 +36,8 @@ exports.adminBookingTrigger = functions.firestore.document('BookingDetails/{id}'
         notification: {
             title: 'New Booking',
             body: 'New booking request sent', 
-            clickAction: 'FLUTTER_NOTIFICATION_CLICK'
+            clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+            sound: 'default'
         } 
     })
 });
@@ -50,7 +52,8 @@ exports.confirmNotification = functions.firestore.document('confirmedOrders/{id}
             notification: {
                 title: 'Order Confirmation',
                 body: 'Your order has been confirmed',
-                clickAction: 'FLUTTER_NOTIFICATION_CLICK'
+                clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+                sound: 'default'
             }
         });
     } else if(rejected === true) {
@@ -58,7 +61,8 @@ exports.confirmNotification = functions.firestore.document('confirmedOrders/{id}
             notification: {
                 title: 'Order rejected',
                 body: 'Your order has been rejected',
-                clickAction: 'FLUTTER_NOTIFICATION_CLICK'
+                clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+                sound: 'default'
             }
         });
     }
@@ -75,7 +79,8 @@ exports.BookingNotification = functions.firestore.document('BookingDetails/{id}'
             notification: {
                 title: 'Booking Confirmation',
                 body: 'Your Booking has been confirmed',
-                clickAction: 'FLUTTER_NOTIFICATION_CLICK'
+                clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+                sound: 'default'
             }
         });
     } else if(isRejected === true) {
@@ -83,9 +88,10 @@ exports.BookingNotification = functions.firestore.document('BookingDetails/{id}'
             notification: {
                 title: 'Booking Rejection',
                 body: 'Your Booking has been rejected',
-                clickAction: 'FLUTTER_NOTIFICATION_CLICK'
+                clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+                sound: 'default'
             }
         });
-    }
+    } 
 });
 

@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.2"
+  audioplayers:
+    dependency: "direct main"
+    description:
+      name: audioplayers
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.1"
   badges:
     dependency: "direct main"
     description:
@@ -127,6 +134,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.3"
+  fading_edge_scrollview:
+    dependency: transitive
+    description:
+      name: fading_edge_scrollview
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.4"
   fake_async:
     dependency: transitive
     description:
@@ -387,6 +401,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0+1"
+  marquee:
+    dependency: "direct main"
+    description:
+      name: marquee
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.6.1"
   matcher:
     dependency: transitive
     description:
@@ -574,6 +595,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  uuid:
+    dependency: transitive
+    description:
+      name: uuid
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.2"
   vector_math:
     dependency: transitive
     description:

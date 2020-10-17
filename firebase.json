@@ -1,7 +1,6 @@
 {
   "functions": {
-    "predeploy": [
-    ],
+    "predeploy": [],
     "source": "functions"
   }
 }

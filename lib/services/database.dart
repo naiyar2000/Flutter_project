@@ -136,7 +136,8 @@ class DatabaseService {
       List qty,
       int total,
       bool isConfirmed,
-      String mobileNumber) async {
+      String mobileNumber,
+      int orderType) async {
     // var docId = '$id' + '$total';
     var _date = DateTime.now().toUtc().millisecondsSinceEpoch;
     var forToken =
@@ -160,7 +161,8 @@ class DatabaseService {
           '${DateTime.now().year}',
       'token': _token,
       'mobileNumber': mobileNumber,
-      'isRejected': false
+      'isRejected': false,
+      'orderType': orderType
     });
   }
 
