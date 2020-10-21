@@ -508,7 +508,6 @@ class _ProceedAccessState extends State<ProceedAccess> {
           child: FlatButton(
               color: Colors.deepOrange,
               onPressed: () {
-                Navigator.pushNamed(context, '/address');
               },
               child: Text(
                 'Please Select Mode of Order',
