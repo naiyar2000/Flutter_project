@@ -191,14 +191,20 @@ class FoodCard extends StatelessWidget {
                             Container(
                               width: MediaQuery.of(context).size.width * 0.25,
                               height: MediaQuery.of(context).size.height * 0.03,
-                              child: Text(
-                                categoryName,
+                              child: Marquee(
+                                text: categoryName,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
                                 style: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 13.0,
                                     color: Colors.white),
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
+                                velocity: 30,
+                                blankSpace: 20,
+                                pauseAfterRound: Duration(seconds: 2),
+
+                                // overflow: TextOverflow.ellipsis,
+                                // textAlign: TextAlign.left,
                               ),
                             ),
                             Container(
