@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 import 'package:rcapp/models/user.dart';
 
@@ -157,7 +158,8 @@ class _PreviousOrderState extends State<PreviousOrder> {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w400),
                             ),
-                            if (!orders[index]["isConfirmed"] && !orders[index]["isRejected"]) ...[
+                            if (!orders[index]["isConfirmed"] &&
+                                !orders[index]["isRejected"]) ...[
                               Text(
                                 "Not Confirmed",
                                 style: GoogleFonts.inter(
@@ -165,7 +167,7 @@ class _PreviousOrderState extends State<PreviousOrder> {
                                     fontSize: 18,
                                     fontWeight: FontWeight.w400),
                               ),
-                            ] else if(orders[index]["isRejected"])...[
+                            ] else if (orders[index]["isRejected"]) ...[
                               Text(
                                 "Rejected",
                                 style: GoogleFonts.inter(
@@ -181,8 +183,23 @@ class _PreviousOrderState extends State<PreviousOrder> {
                                     fontSize: 18,
                                     fontWeight: FontWeight.w400),
                               ),
-                            ]
+                            ],
                           ]),
+                          SizedBox(height: 8),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                orders[index]["orderType"] == 1
+                                    ? "Order Mode : Home Delivery"
+                                    : "Order Mode: Pick Up",
+                                style: GoogleFonts.inter(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
                           SizedBox(
                             height: 15,
                           ),
@@ -258,32 +275,38 @@ class _OrderDataState extends State<OrderData> {
       child: ListView.builder(
           itemCount: widget.item.length,
           itemBuilder: (_, index) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                    // decoration: BoxDecoration(color: Colors.deepOrange),
-                    width: MediaQuery.of(context).size.width * 0.34,
-                    child: Text(
-                      '${widget.item[index]}',
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.left,
-                    )),
-                Container(
-                    // decoration: BoxDecoration(color: Colors.deepOrange),
-                    width: MediaQuery.of(context).size.width * 0.2,
-                    child: Text(
-                      '${widget.quantity[index]}',
-                      textAlign: TextAlign.center,
-                    )),
-                Container(
-                    // decoration: BoxDecoration(color: Colors.deepOrange),
-                    width: MediaQuery.of(context).size.width * 0.2,
-                    child: Text(
-                      '${widget.price[index]}',
-                      textAlign: TextAlign.center,
-                    )),
-              ],
+            return Container(
+              height: 20,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                      // decoration: BoxDecoration(color: Colors.deepOrange),
+                      width: MediaQuery.of(context).size.width * 0.34,
+                      child: Marquee(
+                        text: '${widget.item[index]}' ?? '',
+                        velocity: 50,
+                        blankSpace: 15,
+                        // overflow: TextOverflow.ellipsis,
+                        // textAlign: TextAlign.left,
+                      )),
+                  Container(
+                      // decoration: BoxDecoration(color: Colors.deepOrange),
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Text(
+                        '${widget.quantity[index]}',
+
+                        // textAlign: TextAlign.center,
+                      )),
+                  Container(
+                      // decoration: BoxDecoration(color: Colors.deepOrange),
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Text(
+                        '${widget.price[index]}',
+                        textAlign: TextAlign.center,
+                      )),
+                ],
+              ),
             );
           }),
     );
