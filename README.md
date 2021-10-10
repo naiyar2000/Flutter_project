@@ -1,6 +1,7 @@
 # rcapp_a
 
-A New Flutter application.
+A new Flutter application, for food delivery.
+
 
 ## Getting Started.
 
