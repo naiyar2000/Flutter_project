@@ -5,7 +5,7 @@ A new Flutter application, for food delivery.
 
 ## Getting Started.
 
-This project is a starting point for a Flutter application.
+This project is the starting point for a Flutter application.
 
 A few resources to get you started with if this is your first pkmkkc Flutter project:
 
