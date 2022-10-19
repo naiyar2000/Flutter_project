@@ -3,7 +3,7 @@
 A new Flutter application, for food delivery.
 
 
-## Getting Started.
+## Getting Started With the application.
 
 This project is the starting point for a Flutter application.
 
